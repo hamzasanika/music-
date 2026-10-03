@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+overflow:hidden;
+background:linear-gradient(to top,#8e26c2,#0b2d4a);
+font-family:Arial;
+}
+.explosion{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:80px;
+opacity:0;
+animation:boom 9s forwards;
+}
+
+@keyframes boom{
+0%,90%{opacity:0; transform:scale(0.5);}
+95%{opacity:1; transform:scale(1.5);}
+100%{opacity:0;}
+}
+
+/* message */
+.msg{
+text-shadow:0 0 10px rgba(255,255,255,0.5);
+font-weight:bold;
+letter-spacing:1px;
+position:absolute;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+color:white;
+font-size:30px;
+}
+
+/* DUCK */
+.duck{
+will-change: transform, opacity;
+position:absolute;
+bottom:50px;
+left:50%;
+transform:translateX(-50%) scale(0.4);
+
+font-size:50px;
+
+animation:moveUp 8s linear forwards;
+}
+
+/* movement + scale */
+@keyframes moveUp{
+
+0%{
+transform:translateX(-50%) translateY(0) scale(0.4);
+opacity:0.3;
+}
+
+60%{
+transform:translateX(-50%) translateY(-250px) scale(1.5);
+opacity:1;
+}
+
+100%{
+transform:translateX(-50%) translateY(-350px) scale(3);
+opacity:0;
+}
+
+}
+
+/* PHOTO */
+.photo{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:220px;
+height:220px;
+
+opacity:0;
+animation:showPhoto 0.5s forwards;
+animation-delay:7s;
+
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 0 20px rgba(255,255,255,0.3);
+}
+
+.photo img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* show photo */
+@keyframes showPhoto{
+from{
+opacity:0;
+transform:translate(-50%,-50%) scale(0.5);
+}
+to{
+opacity:1;
+transform:translate(-50%,-50%) scale(1);
+}
+}
+.photo video{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="msg">
+KHLIK RAJL OTSNAHA TFRG3💥 
+</div>
+
+<!-- duck -->
+<div class="duck">💣</div>
+<div class="explosion">💥</div>
+
+<!-- PHOTO PLACE -->
+<div class="photo">
+
+<video autoplay muted loop playsinline controls>
+<source src="lkhdma.mp4.mp4" type="video/mp4">
+</video>
+
+</div>
+
+</body>
+
+
+</html>
