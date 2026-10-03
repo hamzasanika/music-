@@ -1,145 +1,155 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-<meta charset="UTF-8">
 
-<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-body{
-margin:0;
-height:100vh;
-overflow:hidden;
-background:linear-gradient(to top,#8e26c2,#0b2d4a);
-font-family:Arial;
-}
-.explosion{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-font-size:80px;
-opacity:0;
-animation:boom 9s forwards;
-}
+    <title>Lyrics Animation</title>
 
-@keyframes boom{
-0%,90%{opacity:0; transform:scale(0.5);}
-95%{opacity:1; transform:scale(1.5);}
-100%{opacity:0;}
-}
+    <style>
 
-/* message */
-.msg{
-text-shadow:0 0 10px rgba(255,255,255,0.5);
-font-weight:bold;
-letter-spacing:1px;
-position:absolute;
-top:20px;
-left:50%;
-transform:translateX(-50%);
-color:white;
-font-size:30px;
-}
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
 
-/* DUCK */
-.duck{
-will-change: transform, opacity;
-position:absolute;
-bottom:50px;
-left:50%;
-transform:translateX(-50%) scale(0.4);
+        body{
 
-font-size:50px;
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(to right,#000000,#240046,#5a189a);
+            overflow:hidden;
+            font-family:Arial;
 
-animation:moveUp 8s linear forwards;
-}
+        }
 
-/* movement + scale */
-@keyframes moveUp{
+        .container{
 
-0%{
-transform:translateX(-50%) translateY(0) scale(0.4);
-opacity:0.3;
-}
+            position:relative;
+            width:100%;
+            text-align:center;
 
-60%{
-transform:translateX(-50%) translateY(-250px) scale(1.5);
-opacity:1;
-}
+        }
 
-100%{
-transform:translateX(-50%) translateY(-350px) scale(3);
-opacity:0;
-}
+        h1{
 
-}
+            color:white;
+            font-size:60px;
+            margin-bottom:100px;
+            text-shadow:0px 0px 20px cyan;
+            animation:glow 1s infinite alternate;
 
-/* PHOTO */
-.photo{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-width:220px;
-height:220px;
+        }
 
-opacity:0;
-animation:showPhoto 0.5s forwards;
-animation-delay:7s;
+        .lyrics{
 
-border-radius:15px;
-overflow:hidden;
-box-shadow:0 0 20px rgba(255,255,255,0.3);
-}
+            position:absolute;
+            width:100%;
+            left:0;
 
-.photo img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
+            color:#00f5ff;
+            font-size:45px;
+            font-weight:bold;
 
-/* show photo */
-@keyframes showPhoto{
-from{
-opacity:0;
-transform:translate(-50%,-50%) scale(0.5);
-}
-to{
-opacity:1;
-transform:translate(-50%,-50%) scale(1);
-}
-}
-.photo video{
-width:100%;
-height:100%;
-object-fit:cover;
-}
+            opacity:0;
 
-</style>
+            text-shadow:0px 0px 20px #00f5ff;
+
+            animation:show 12s infinite;
+
+        }
+
+        .line1{
+            animation-delay:0s;
+        }
+
+        .line2{
+            animation-delay:3s;
+        }
+
+        .line3{
+            animation-delay:6s;
+        }
+
+        .line4{
+            animation-delay:9s;
+        }
+
+        @keyframes show{
+
+            0%{
+                opacity:0;
+                transform:translateY(80px) scale(0.5);
+            }
+
+            10%{
+                opacity:1;
+                transform:translateY(0px) scale(1);
+            }
+
+            30%{
+                opacity:1;
+            }
+
+            40%{
+                opacity:0;
+                transform:translateY(-80px) scale(1.2);
+            }
+
+            100%{
+                opacity:0;
+            }
+
+        }
+
+        @keyframes glow{
+
+            from{
+                text-shadow:0px 0px 10px cyan;
+            }
+
+            to{
+                text-shadow:
+                0px 0px 20px cyan,
+                0px 0px 40px cyan,
+                0px 0px 80px cyan;
+            }
+
+        }
+
+    </style>
 
 </head>
 
 <body>
 
-<div class="msg">
-KHLIK RAJL OTSNAHA TFRG3💥 
-</div>
+    <div class="container">
 
-<!-- duck -->
-<div class="duck">💣</div>
-<div class="explosion">💥</div>
+        <h1>🎵 AJI NTSSAM7O 🎵</h1>
 
-<!-- PHOTO PLACE -->
-<div class="photo">
+        <div class="lyrics line1">
+            BOM💥 BOM💥 BOM💥 BOM💥
+        </div>
 
-<video autoplay muted loop playsinline controls>
-<source src="lkhdma.mp4.mp4" type="video/mp4">
-</video>
+        <div class="lyrics line2">
+            Menek majani noum
+        </div>
 
-</div>
+        <div class="lyrics line3">
+            Aji 3ndi ntssamho🥹
+        </div>
+
+        <div class="lyrics line4">
+            OYA ka7lat l3yon😍
+        </div>
+
+    </div>
 
 </body>
-
 
 </html>
